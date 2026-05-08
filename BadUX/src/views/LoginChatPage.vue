@@ -10,6 +10,17 @@
     const messages = ref<{ message: string; user: boolean }[]>([]);
     function onSend(message: { message: string; user: boolean }) {
         messages.value.push(message);
+
+        const pwd = message.message;
+        if (pwd === user.password) {
+            addResponse("Omg ja ich will");
+        } else {
+            addResponse("Boah ne hab leider gar kein Interesse")
+        }
+    }
+
+    function addResponse(msg: string) {
+        messages.value.push({ message: msg, user: false });
     }
 </script>
 
