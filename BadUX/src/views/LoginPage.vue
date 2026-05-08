@@ -1,11 +1,13 @@
 <template>
-    <div class="user" v-if="currentUser">
-        <img :src="currentUser.profilePicture">
-        <h2>{{ currentUser.name }}</h2>
-        <p>{{ currentUser.biography }}</p>
-        <div class="buttons">
-            <button @click="swipeLeft">nope</button>
-            <button @click="swipeRight">yehaw</button>
+    <div class="container">
+        <div class="user" v-if="currentUser">
+            <img :src="currentUser.profilePicture">
+            <h2>{{ currentUser.name }}</h2>
+            <p>{{ currentUser.biography }}</p>
+            <div class="buttons">
+                <button id="left" @click="swipeLeft">nope</button>
+                <button id="right" @click="swipeRight">yehaw</button>
+            </div>
         </div>
     </div>
 </template>
@@ -50,5 +52,31 @@
 </script>
 
 <style scoped>
+    h2, p, button {
+        font-family: sans-serif;
+    }
 
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 300px;
+    }
+
+    button {
+        width: 50%;
+    }
+
+    #left {
+        background-color: red;
+    }
+
+    #right {
+        background-color: green;
+    }
 </style>
