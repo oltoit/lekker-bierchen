@@ -5,7 +5,7 @@
     import { ref } from 'vue';
 
     const route = useRoute();
-    const user = JSON.parse(route.query.user);
+    const user = JSON.parse(route.query.user as string);
 
     const messages = ref([]);
     function onSend(message) {
