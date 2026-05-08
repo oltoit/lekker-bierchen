@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Bieeeeer</h1>
+    <p>Lecker</p>
     <img src="https://image.geo.de/30124472/t/Cx/v4/w1440/r0/-/bier-gezapft-f-154936574-jpeg--70436-.jpg" alt="">
   </div>
 </template>
