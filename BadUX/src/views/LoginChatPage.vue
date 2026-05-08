@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
     import ChatMessage from './chat-components/ChatMessage.vue';
     import TextField from './chat-components/TextField.vue';
     import { useRoute } from "vue-router";
@@ -7,8 +7,8 @@
     const route = useRoute();
     const user = JSON.parse(String(route.query.user));
 
-    const messages = ref([]);
-    function onSend(message) {
+    const messages = ref<{ message: string; user: boolean }[]>([]);
+    function onSend(message: { message: string; user: boolean }) {
         messages.value.push(message);
     }
 </script>
