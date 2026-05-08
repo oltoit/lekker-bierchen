@@ -1,7 +1,10 @@
 <script>
-    import jsonData from '../users.json';
     import { defineComponent } from 'vue';
-import ChatMessage from './chat-components/ChatMessage.vue';
+    import ChatMessage from './chat-components/ChatMessage.vue';
+    import { useRoute } from "vue-router";
+
+    const route = useRoute();
+    const user = JSON.parse(route.query.user);
 
     export default defineComponent({
         name: 'LoginChatPage',
@@ -10,7 +13,7 @@ import ChatMessage from './chat-components/ChatMessage.vue';
         },
         data() {
             return {
-                users: jsonData
+                user: user
             }
         }
     });
@@ -18,8 +21,8 @@ import ChatMessage from './chat-components/ChatMessage.vue';
 
 <template>
     <div>
-        <p>{{ users[0].name }}</p>
-        <img :src="users[0].profilePicture" :alt="users[0].name">
+        <p>{{ user.name }}</p>
+        <img :src="user.profilePicture" :alt="user.name">
         <ChatMessage :message="'Ich werde alles zerstören'" :user="true"/>
     </div>
 </template>
